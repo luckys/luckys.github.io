@@ -1,5 +1,6 @@
 ---
 import { SITE } from "@config";
+import { ViewTransitions } from 'astro:transitions';
 import "@styles/base.css";
 
 const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
@@ -27,7 +28,7 @@ const socialImageURL = new URL(
 ---
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -74,8 +75,7 @@ const socialImageURL = new URL(
         />
       )
     }
-
-    <script is:inline src="/toggle-theme.js"></script>
+    <ViewTransitions />
   </head>
   <body>
     <slot />
