@@ -5,7 +5,7 @@ import Layout from "@layouts/Layout.astro";
 import Main from "@layouts/Main.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
-import Search from "@components/Search";
+import SearchField from "@components/Search";
 
 // Retrieve all articles
 const posts = await getCollection("blog", ({ data }) => !data.draft);
@@ -21,7 +21,7 @@ const searchList = posts.map(({ data }) => ({
 <Layout title={`Buscar | ${SITE.title}`}>
   <Header activeNav="search" />
   <Main>
-    <Search client:load searchList={searchList} />
+    <SearchField client:load searchList={searchList} />
   </Main>
   <Footer />
 </Layout>
